@@ -25,9 +25,12 @@ const images = [
 ];
 const imgPlace = document.querySelector(".gallery");
 
-const li = document.createElement("li");
 const markup = images.map(
-  (item) => `<img src=${item.url} alt=${item.alt} width = "500px" />`
+  (item) => `<li><img src=${item.url} alt=${item.alt} width = "500px" /></li>`
 );
-li.insertAdjacentHTML("afterbegin", markup);
-imgPlace.appendChild(li);
+imgPlace.insertAdjacentHTML("afterbegin", markup);
+const imgs = document.querySelectorAll("img");
+imgs.forEach((img) => {
+  img.style.boxShadow = "2px 5px 5px hsl(20,40%,50% )";
+  img.style.borderRadius = "20px";
+});
