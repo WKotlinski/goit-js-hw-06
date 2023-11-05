@@ -8,13 +8,11 @@ const ingredients = [
 ];
 
 const ingredientsList = document.getElementById("ingredients");
-const list = ingredients
-  .map((veggie) => {
-    const li = document.createElement("li");
-    li.textContent = veggie;
-    li.classList.add("item");
-    ingredientsList.appendChild(li);
-  })
-  .join("");
+const elements = [];
+for (const veggie of ingredients) {
+  const li = document.createElement("li");
+  li.textContent = veggie;
+  elements.push(li);
+}
 
-ingredientsList.append(...list);
+ingredientsList.append(...elements);
