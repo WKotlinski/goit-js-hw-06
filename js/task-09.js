@@ -6,9 +6,11 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+const span = document.querySelector(".color");
 const button = document.querySelector(".change-color");
 const callback = function () {
   const body = document.body;
   body.style.backgroundColor = getRandomHexColor();
+  span.textContent = getRandomHexColor();
 };
 button.addEventListener("click", callback);
