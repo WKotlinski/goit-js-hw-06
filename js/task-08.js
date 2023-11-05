@@ -22,11 +22,11 @@
 //      Aby otrzymać dostęp do elementów formularza użyj właściwości elements.
 //     Wypisz obiekt z wartościami formularza w konsoli i wyczyść wartości pól input metodą reset.
 const form = document.querySelector(".login-form");
+const inputEmail = document.querySelector('input[name="email"]').value;
+const inputPassword = document.querySelector('input[name="password"]').value;
 const callback = function (event) {
-  const inputEmail = document.querySelector('input[name="email"]').value;
-  const inputPassword = document.querySelector('input[name="password"]').value;
   event.preventDefault();
-  if (inputEmail === "" && inputPassword === "") {
+  if (inputEmail === "" || inputPassword === "") {
     alert("Uzupełnij pola!");
   } else {
     const inputValues = {
