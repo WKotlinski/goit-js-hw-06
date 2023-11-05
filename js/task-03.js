@@ -25,12 +25,18 @@ const images = [
 ];
 const imgPlace = document.querySelector(".gallery");
 
-const markup = images.map(
-  (item) => `<li><img src=${item.url} alt=${item.alt} width = "500px" /></li>`
-);
+const markup = images
+  .map(
+    (item) => `<li><img src=${item.url} alt=${item.alt} width = "500px" /></li>`
+  )
+  .join("");
 imgPlace.insertAdjacentHTML("afterbegin", markup);
 const imgs = document.querySelectorAll("img");
 imgs.forEach((img) => {
   img.style.boxShadow = "2px 5px 5px hsl(20,40%,50% )";
   img.style.borderRadius = "20px";
+  img.style.margin = "10px";
 });
+imgPlace.style.listStyle = "none";
+imgPlace.style.display = "flex";
+imgPlace.style.flexDirection = "column";
